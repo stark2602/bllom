@@ -1,0 +1,149 @@
+/* Background image wrapper */
+.home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+     background-color: #f5f6fa;
+  }
+  
+  .home img {
+    height: 100%;
+    object-fit: cover;
+  
+  }
+  /* header css */
+  /* .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  .header ul{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 10%;
+    align-items: center;
+  } */
+
+
+  /* Main content layout */
+  .page-wrapper {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+    height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+  
+  /* Left side: Application info */
+  .app-left {
+   
+    width: 50%;
+    
+  }
+  
+  /* Right side: Login form */
+  .app-right {
+    margin-top: 10%;
+    padding: 0% 10% 0% 30%;
+    width: 50%;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    line-height: 150%;
+  }
+  .login-container {
+    animation: animateZoom 0.6s ease;
+    margin-top: 5%;
+    width: 35%;
+    padding: 30px;
+    background:#f5f6fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .signup-container {
+    margin-top: 4%;
+    width: 35%;
+    height: 135%;
+    padding: 30px;
+    background: #f5f6fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+  
+  @keyframes animateZoom {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  
+  /* Form styling */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+
+ .container-btn {
+    width: 100%;
+    padding: 10px;
+    background: #144df4;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #218838;
+  }
+  
+  /* Error message */
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+  }
+  

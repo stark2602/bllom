@@ -1,0 +1,232 @@
+
+/* Header & Navigation */
+.top-nav {
+   
+    top: 0;
+    position: fixed;
+    width: 96%;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #144df4;
+  }
+  
+  .nav-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    cursor: pointer;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #144df4;
+  }
+  
+  nav a:hover {
+    color: #0d3ae1;
+  }
+  
+  /* User Info and Popup */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .logout-popup {
+    position: absolute;
+    right: 30px;
+    top: 70px;
+    background-color: white;
+    border: 1px solid #dce3ff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 140px;
+    text-align: center;
+  }
+  
+  .logout-popup button {
+    background: none;
+    border: none;
+    color: #144df4;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .logout-popup button:hover {
+    color: #0d3ae1;
+  }
+
+
+
+
+/* General Styling */
+.report-container {
+    padding: 60px 0px 0px 0px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Title */
+  .report-container h2 {
+    color: #144df4;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Form for uploading */
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .upload-form input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .upload-form button {
+    padding: 10px 20px;
+    background-color: #144df4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .upload-form button:hover {
+    background-color: #0d3a91;
+  }
+  
+  /* Report Card */
+  .report-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .report-card p {
+    margin: 10px 0;
+  }
+  
+  .report-card a {
+    color: #144df4;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .report-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .report-card button {
+    padding: 8px 16px;
+    background-color: #144df4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .report-card button:hover {
+    background-color: #0d3a91;
+  }
+  
+  /* Download and Edit Section */
+  .download-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .download-section a {
+    padding: 8px 16px;
+    background-color: #0d3a91;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .download-section a:hover {
+    background-color: #0d2a61;
+  }
+  
+  .edit-button {
+    padding: 8px 16px;
+    background-color: #f5a623;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-button:hover {
+    background-color: #d98819;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .upload-form {
+      width: 100%;
+    }
+  
+    .report-card {
+      width: 100%;
+    }
+  
+    .download-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .download-section a,
+    .edit-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }

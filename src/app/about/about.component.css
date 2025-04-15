@@ -1,0 +1,52 @@
+.about-container {
+  margin: 0;
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f6fa;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #144df4;
+    margin-bottom: 10px;
+  }
+  
+  .intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  .section h2 {
+    color: #144df4;
+    margin-bottom: 10px;
+  }
+  
+  .section p, .section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .section ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .section ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #144df4;
+  }
+  

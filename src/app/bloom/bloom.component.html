@@ -1,0 +1,42 @@
+<div class="dashboard-header">
+    <div class="logo">PSIT MEDICURE</div>
+    <div class="user-info">
+      <span class="username">username</span>
+      <img src="assets/img/profile.jpg" alt="Profile" class="profile-img" (click)="toggleLogoutMenu()"/>
+    </div>
+  </div>
+  <div *ngIf="showLogoutMenu" class="logout-menu">
+    <button (click)="logout()">Logout</button>
+  </div>
+<div class="bloom-container">
+    <h2>Hygience Is Important </h2>
+    <form #bloomForm="ngForm" (ngSubmit)="submitBloomRequest(bloomForm)">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" [(ngModel)]="bloom.name" required />
+      </div>
+  
+      <div class="form-group">
+        <label>PSIT ID</label>
+        <input type="text" name="psitid" [(ngModel)]="bloom.psitid" required />
+      </div>
+  
+      <div class="form-group">
+        <label>Hall Code</label>
+        <input type="text" name="hallCode" [(ngModel)]="bloom.hallCode" required />
+      </div>
+  
+      <div class="form-group">
+        <label>Sanitary Pads Quantity</label>
+        <input type="number" name="padsQuantity" [(ngModel)]="bloom.padsQuantity" required />
+      </div>
+  
+      <div class="form-group">
+        <label>Room Number</label>
+        <input type="text" name="roomNumber" [(ngModel)]="bloom.roomNumber" required />
+      </div>
+  
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+  

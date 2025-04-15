@@ -1,0 +1,146 @@
+<div class="home">
+    <img src="assets/img/bg.jpg" alt="">
+  </div>
+
+  <app-header (showLogin)="showLogin()"></app-header>
+
+  <div class="page-wrapper">
+    <div class="app-left" ></div>
+    <div class="app-right" *ngIf="!(isLoginvisible) && !(isSignupVisible)">
+      <p>Welcome to BloomCare – your trusted partner in student wellness and healthcare. Our platform is designed to simplify access to medical services, appointment booking, and essential wellness resources like Bloom support. Whether you're looking for a quick consultation, tracking your health history, or accessing emergency care, BloomCare is here to support you every step of the way. Your well-being is our priority </p>
+    </div>
+
+    <!-- login form html code -->
+
+    <div class="login-container" *ngIf="isLoginvisible">
+      <h2>Login</h2>
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <input
+          type="text"
+          name="Name"
+          [(ngModel)]="username"
+          placeholder="Name"
+          required
+          style="background-color: #f5f6fa;"
+        />
+        <input
+          type="text"
+          name="ID"
+          [(ngModel)]="psitid"
+          placeholder="ID"
+          required
+          style="background-color: #f5f6fa;"
+        />
+        <input
+          type="password"
+          name="Password"
+          [(ngModel)]="password"
+          placeholder="Password"
+          required
+          style="background-color: #f5f6fa;"
+        />
+        <button class="container-btn" type="submit">Login</button>
+        <p>If not a registered user <a style="color:#144df4;" (click)="showSignup()">Sign up</a></p>
+      </form>
+      <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+    </div>
+
+<!-- Sign upm form html code  -->
+
+    <div class="signup-container" *ngIf="isSignupVisible">
+      <h2>Sign Up</h2>
+      <form #signupForm="ngForm" (ngSubmit)="register()">
+    
+        <input
+        type="number"
+        name="Id"
+        [(ngModel)]="signupData.id"
+        placeholder="id"
+        required
+        style="background-color: #f5f6fa;"
+      />
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="signupData.name"
+          placeholder="Full Name"
+          required
+          style="background-color: #f5f6fa;"
+        />
+    
+        <input
+          type="number"
+          name="psitid"
+          [(ngModel)]="signupData.psitid"
+          placeholder="Phone Number"
+          required
+          style="background-color: #f5f6fa;"
+        />
+    
+        <input
+          type="text"
+          name="course"
+          [(ngModel)]="signupData.course"
+          placeholder="Course"
+          required
+          style="background-color: #f5f6fa;"
+        />
+    
+        <input
+          type="number"
+          name="room"
+          [(ngModel)]="signupData.room"
+          placeholder="Room Number"
+          required
+          style="background-color: #f5f6fa;"
+        />
+    
+        <select name="blood" [(ngModel)]="signupData.blood" required style="width: 100% ; height: 40px; border: 0px; border-radius: 10px;">
+          <option value="" disabled selected>Select Blood Group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+        </select>
+    
+        <label style="display: flex; flex-direction: row-reverse; align-items: center; justify-content: space-between;">
+          <input type="radio" name="gender" [(ngModel)]="signupData.female" [value]="false" required /> Male</label>
+        <label style="display: flex; flex-direction: row-reverse; align-items: center; justify-content: space-between;">
+          <input type="radio" name="gender" [(ngModel)]="signupData.female" [value]="true" required />Female </label>
+    
+        <input
+          type="text"
+          name="hostel"
+          [(ngModel)]="signupData.hostel"
+          placeholder="Hostel Name"
+          required
+        />
+    
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="signupData.password"
+          placeholder="Password"
+          required
+        />
+    
+        <input
+          type="password"
+          name="confirmPassword"
+          [(ngModel)]="signupData.confirmPassword"
+          placeholder="Confirm Password"
+          required
+        />
+    
+        <button class="container-btn" type="submit">Register</button>
+      </form>
+    
+      <div class="error" *ngIf="signupErrorMessage">{{ signupErrorMessage }}</div>
+    </div>
+    
+  </div>
+  

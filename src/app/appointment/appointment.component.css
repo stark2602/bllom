@@ -1,0 +1,265 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4ff;
+}
+
+/* Header & Navigation */
+.top-nav {
+  width: 96%;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #144df4;
+}
+
+.nav-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ a:visited {
+  color: inherit
+}
+
+ a:hover {
+  color: #0d3ae1;
+}
+
+/* User Info and Popup */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logout-popup {
+  position: absolute;
+  right: 30px;
+  top: 70px;
+  background-color: white;
+  border: 1px solid #dce3ff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 140px;
+  text-align: center;
+}
+
+.logout-popup button {
+  background: none;
+  border: none;
+  color: #144df4;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+}
+
+.logout-popup button:hover {
+  color: #0d3ae1;
+}
+
+/* Hero Section */
+.hero {
+  background: #dce6ff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: #0d2e7f;
+  margin: 0;
+}
+
+.search-bar {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  border: 1px solid #b2c1ff;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  width:20%;
+  height: 40px;
+ 
+  border: none;
+  background: #144df4;
+  color: white;
+  cursor: pointer;
+}
+.search-results {
+  position: absolute;
+  top: 47%;
+  left: 30%;
+  width: 35%;
+  height: 40%;
+  max-width: 500px;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border-radius: 0 0 6px 6px;
+  overflow-y: auto;
+}
+
+.search-results ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-results strong {
+  font-size: 16px;
+  color: #333;
+}
+
+.search-results small {
+  display: block;
+  font-size: 13px;
+  color: #777;
+}
+.appointment-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  /* button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+   */
+  button:hover {
+    background-color: #218838;
+  }
+  
+  
+/* Responsive */
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-section {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .logout-popup {
+    right: 10px;
+    top: 60px;
+  }
+}

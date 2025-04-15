@@ -1,0 +1,16 @@
+<div class="header">
+    <ul class="logo">BloomCare</ul>
+    <ul class="nav-items">
+      <li><a routerLink="/home" routerLinkActive="active-link">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active-link">About</a></li>
+      <li><a routerLink="/service" routerLinkActive="active-link">Services</a></li>
+  
+      <!-- Conditionally display Login based on the active route -->
+      <li *ngIf="currentRoute === '/home'">
+        <a (click)="showLogin.emit()" style="background-color: blue; color: whitesmoke; border-radius: 10%; padding: 5px;">
+          Login
+        </a>
+      </li>
+    </ul>
+  </div>
+  

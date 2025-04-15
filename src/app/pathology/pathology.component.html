@@ -1,0 +1,53 @@
+<header class="top-nav">
+    <div class="logo">MED-CURE</div>
+    <div class="nav-section">
+      <nav>
+        <ul>
+          <li><a routerLink="/doctor"  routerLinkActive="active-link">Find a Doctor</a></li>
+          <li><a routerLink="/investors"  routerLinkActive="active-link">Investors</a></li>
+          <li><a routerLink="/careers"  routerLinkActive="active-link">Careers</a></li>
+          <li><a routerLink="/csr"  routerLinkActive="active-link">CSR</a></li>
+          <li><a routerLink="/contact"  routerLinkActive="active-link">Contact Us</a></li>
+          <li>
+            <div class="user-info">
+              <span class="username">{{ username }}</span>
+              <img
+                src="assets/img/profile.jpg"
+                alt="Profile"
+                class="profile-img"
+                (click)="toggleLogoutMenu()" />
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div *ngIf="showLogoutMenu" class="logout-popup">
+        <button (click)="logout()">Logout</button>
+      </div>
+      
+  </header>
+
+<div class="hospital-container">
+    <h2>Pathology & Diagnostic Labs in Jalandhar</h2>
+  
+    <div class="filter-section">
+      <input type="text" placeholder="Search by name..." [(ngModel)]="searchTerm" (input)="filterHospitals()" />
+      <select [(ngModel)]="timeFilter" (change)="filterHospitals()">
+        <option value="">All Plans</option>
+        <option value="Free Plan">Free Plan</option>
+        <option value="Premium Plan">Premium Plan</option>
+      </select>
+    </div>
+  
+    <div class="hospital-cards">
+      <div class="hospital-card" *ngFor="let hospital of filteredHospitals">
+        <h3>{{ hospital.name }}</h3>
+        <p><strong>Location:</strong> {{ hospital.place }}</p>
+        <p><strong>Email:</strong> {{ hospital.mail }}</p>
+        <p><strong>Phone:</strong> {{ hospital.phone }}</p>
+        <p><strong>Rating:</strong> {{ hospital.rating }}</p>
+        <p><strong>Plan:</strong> {{ hospital.time }}</p>
+      </div>
+    </div>
+  </div>
+  

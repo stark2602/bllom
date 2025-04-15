@@ -1,0 +1,69 @@
+<header class="top-nav">
+    <div class="logo">BloomCare</div>
+    <div class="nav-section">
+      <nav>
+        <ul>
+          <li><a routerLink="/doctor" routerLinkActive="active-link">Find a Doctor</a></li>
+          <li><a routerLink="/investors"  routerLinkActive="active-link">Investors</a></li>
+          <li><a routerLink="/careers"  routerLinkActive="active-link">Careers</a></li>
+          <li><a routerLink="/csr"  routerLinkActive="active-link">CSR</a></li>
+          <li><a routerLink="/contact"  routerLinkActive="active-link">Contact Us</a></li>
+          <li>
+            <div class="user-info">
+              <!-- <span class="username">{{ studentData.name }}</span> -->
+              <img
+                src="assets/img/profile.jpg"
+                alt="Profile"
+                class="profile-img"
+                (click)="toggleLogoutMenu()" />
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div *ngIf="showLogoutMenu" class="logout-popup">
+        <button (click)="logout()">Logout</button>
+      </div>
+      
+  </header>
+
+<div class="doctor-container">
+    <h1>Skip the travel!<br>
+        Take Online Doctor Consultation</h1>
+        
+      <h4> Private consultation + Audio call · Starts at just ₹399</h4> 
+  
+    <div class="filter-bar">
+      <input type="text" placeholder="Search by name or expertise..." [(ngModel)]="searchQuery" (input)="filterDoctors()" />
+  
+      <select [(ngModel)]="selectedExpertise" (change)="filterDoctors()">
+        <option value="">All Expertise</option>
+        <option *ngFor="let exp of expertiseList" [value]="exp">{{ exp }}</option>
+      </select>
+  
+      <select [(ngModel)]="sortFee" (change)="filterDoctors()">
+        <option value="">Sort by Fee</option>
+        <option value="asc">Low to High</option>
+        <option value="desc">High to Low</option>
+      </select>
+    </div>
+  
+    <div class="doctor-grid">
+
+        <ng-container *ngFor="let doctor of filteredDoctors">
+            <div class="doctor-card" *ngIf="doctor.live">
+              <h3>{{ doctor.name }}</h3>
+              <p><strong>Expertise:</strong> {{ doctor.expertise }}</p>
+              <p><strong>Experience:</strong> {{ doctor.exp }} years</p>
+              <p><strong>Location:</strong> {{ doctor.place }}</p>
+              <p><strong>Fee:</strong> ₹{{ doctor.fee }}</p>
+              <p><strong>Email:</strong> {{ doctor.mail }}</p>
+              <p><strong>Rating:</strong> {{ doctor.rating }}</p>
+          
+              <a [routerLink]="['/bookappointment']" class="book-btn">Consult Now</a>
+            </div>
+          </ng-container>
+          
+    </div>
+  </div>
+  

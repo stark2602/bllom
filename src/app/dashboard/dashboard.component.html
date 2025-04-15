@@ -1,0 +1,105 @@
+<!-- Header -->
+<header class="top-nav">
+  <div class="logo">BloomCare</div>
+  <div class="nav-section">
+    <nav>
+      <ul>
+        <li><a routerLink="/doctor"  routerLinkActive="active-link">Find a Doctor</a></li>
+        <li><a routerLink="/investors"  routerLinkActive="active-link">Investors</a></li>
+        <li><a routerLink="/careers"  routerLinkActive="active-link">Careers</a></li>
+        <li><a routerLink="/csr"  routerLinkActive="active-link">CSR</a></li>
+        <li><a routerLink="/contact"  routerLinkActive="active-link">Contact Us</a></li>
+        <li>
+          <div class="user-info">
+            <span class="username">{{ username }}</span>
+            <img
+              src="assets/img/profile.jpg"
+              alt="Profile"
+              class="profile-img"
+              (click)="toggleLogoutMenu()" />
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Logout Popup -->
+<div *ngIf="showLogoutMenu" class="logout-popup">
+  <button (click)="logout()">Logout</button>
+</div>
+
+
+<section class="hero">
+  <h1>Committed to Your Well-being<br />Today. Tomorrow. Always.</h1>
+  <div class="search-bar">
+    <input type="text" placeholder="Search doctors, specialties or hospitals" [(ngModel)]="searchQuery" (input)="onSearch()" />
+    <button (click)="onSearch()">Search</button>
+  </div>
+</section>
+
+<div class="search-results" *ngIf="searchQuery.trim()">
+  <div *ngIf="filteredResults.length > 0; else noResults">
+    <ul>
+      <li *ngFor="let result of filteredResults">
+        <strong>{{ result.name }}</strong><br />
+        <small *ngIf="result.place">Address: {{ result.place }}</small>
+        <small *ngIf="result.phone">Phone: {{ result.phone }}</small>
+        <small *ngIf="result.expertise">Expertise: {{ result.expertise }}</small>
+        <small *ngIf="result.fee">Fee: {{ result.fee }}</small>
+      </li>
+    </ul>
+  </div>
+
+
+
+  <ng-template #noResults>
+    <p>No results found.</p>
+  </ng-template>
+</div>
+
+
+<!-- Services -->
+<section class="services">
+  <div class="card" routerLink="/appointment" style="text-decoration : none">
+    <h3><a >Book Appointment</a></h3>
+    <p>Connect with top healthcare professionals</p>
+  </div>
+  <div class="card" routerLink="/hospitals" style="text-decoration : none">
+    <h3><a >Our Hospitals</a></h3>
+    <p>Find care close to home</p>
+  </div>
+  <div class="card"  routerLink="/doctor" style="text-decoration : none">
+    <h3><a >Meet Our Doctors</a></h3>
+    <p>Certified and compassionate experts</p>
+  </div>
+  <div class="card" routerLink="/pathology" style="text-decoration : none" >
+    <h3><a >Health Checkups</a></h3>
+    <p>Customized packages for your needs</p>
+  </div>
+  
+  <div class="card" routerLink="/consultant" style="text-decoration : none" >
+    <h3><a >Online Consultation</a></h3>
+    <p>Get medical advice from your home</p>
+  </div>
+</section>
+
+<!-- Personal Health Report -->
+<section class="health-report">
+  <h2>Your Health Summary</h2>
+  <p>Monitor your wellness and access past reports anytime.</p>
+  <a routerLink="/report">View Full Report</a>
+</section>
+
+<!-- CURA Bot Toggle Button -->
+<div class="cura-toggle" (click)="toggleBot()">
+  <img src="assets/img/cura.jpg" alt="CURA Bot" />
+</div>
+
+<app-cura *ngIf="showBot"></app-cura>
+
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Med-Cure. All rights reserved.</p>
+</footer>

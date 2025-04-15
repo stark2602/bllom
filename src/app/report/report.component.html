@@ -1,0 +1,60 @@
+<header class="top-nav">
+    <div class="logo">BloomCare</div>
+    <div class="nav-section">
+      <nav>
+        <ul>
+          <li><a routerLink="/doctor"  routerLinkActive="active-link">Find a Doctor</a></li>
+          <li><a routerLink="/investors"  routerLinkActive="active-link">Investors</a></li>
+          <li><a routerLink="/careers"  routerLinkActive="active-link">Careers</a></li>
+          <li><a routerLink="/csr"  routerLinkActive="active-link">CSR</a></li>
+          <li><a routerLink="/contact"  routerLinkActive="active-link">Contact Us</a></li>
+          <li>
+            <div class="user-info">
+              <span class="username">{{ username}}</span>
+              <img
+                src="assets/img/profile.jpg"
+                alt="Profile"
+                class="profile-img"
+                (click)="toggleLogoutMenu()" />
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div *ngIf="showLogoutMenu" class="logout-popup">
+        <button (click)="logout()">Logout</button>
+      </div>
+      
+  </header>
+
+
+<div class="report-container">
+    <h2>Blood Reports</h2>
+  
+    <div class="upload-form">
+      <input type="text" placeholder="Patient ID" #patientId />
+      <input type="date" #reportDate />
+      <input type="file" (change)="onFileSelected($event)" />
+      <button (click)="uploadReport(patientId.value, reportDate.value)">
+        {{ editMode ? 'Update Report' : 'Upload Report' }}
+      </button>
+      <button *ngIf="editMode" (click)="resetForm()">Cancel</button>
+    </div>
+  
+    <div *ngIf="reports.length === 0" class="no-report">
+      <p>No reports found for this user.</p>
+    </div>
+  
+    <div class="reports-grid" *ngIf="reports.length > 0">
+      <div class="report-card" *ngFor="let report of reports">
+        <p><strong>Patient ID:</strong> {{ report.phone }}</p>
+        <p><strong>Date:</strong> {{ report.reportDate }}</p>
+        <div class="footer">
+        <a [href]="getDriveFileUrl(report.driveFileId)" target="_blank">Download PDF</a>
+        <button (click)="editReport(report)">Edit</button>
+        <button (click)="deleteReport(report.id)">Delete</button>
+    </div>
+      </div>
+    </div>
+  </div>
+  

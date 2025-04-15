@@ -1,0 +1,184 @@
+
+/* Header & Navigation */
+.top-nav {
+   
+    top: 0;
+    position: fixed;
+    width: 96%;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #144df4;
+  }
+  
+  .nav-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    cursor: pointer;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #144df4;
+  }
+  
+  nav a:hover {
+    color: #0d3ae1;
+  }
+  
+  /* User Info and Popup */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .logout-popup {
+    position: absolute;
+    right: 30px;
+    top: 70px;
+    background-color: white;
+    border: 1px solid #dce3ff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    min-width: 140px;
+    text-align: center;
+  }
+  
+  .logout-popup button {
+    background: none;
+    border: none;
+    color: #144df4;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .logout-popup button:hover {
+    color: #0d3ae1;
+  }
+
+
+
+
+/* Doctors Component Styles */
+.doctor-container {
+    padding: 60px 0px 0px 0px;
+    background: #f0f4ff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #144df4;
+    margin-bottom: 20px;
+  }
+  .filter-bar {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  /* .filter-bar input, */
+  .filter-bar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  
+  .filter-bar {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    display: flex;
+  }
+  
+  .filter-bar input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 2px solid #144df4;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .doctor-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .doctor-card {
+    background: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(20, 77, 244, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .doctor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(20, 77, 244, 0.3);
+  }
+  
+  .doctor-card h3 {
+    color: #144df4;
+    margin-bottom: 10px;
+  }
+  
+  .doctor-card p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  .book-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #144df4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    text-align: center;
+  }
+  
+  .book-btn:hover {
+    background-color: #0f3dd0;
+  }
+    

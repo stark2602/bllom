@@ -1,0 +1,95 @@
+<header class="top-nav">
+  <div class="logo">BloomCare</div>
+  <div class="nav-section">
+    <nav>
+      <ul>
+        <li><a routerLink="/doctor"  routerLinkActive="active-link">Find a Doctor</a></li>
+        <li><a routerLink="/investors"  routerLinkActive="active-link">Investors</a></li>
+        <li><a routerLink="/careers"  routerLinkActive="active-link">Careers</a></li>
+        <li><a routerLink="/csr"  routerLinkActive="active-link">CSR</a></li>
+        <li><a routerLink="/contact"  routerLinkActive="active-link">Contact Us</a></li>
+        <li>
+          <div class="user-info">
+            <span class="username">{{ username }}</span>
+            <img
+              src="assets/img/profile.jpg"
+              alt="Profile"
+              class="profile-img"
+              (click)="toggleLogoutMenu()" />
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div *ngIf="showLogoutMenu" class="logout-popup">
+  <button (click)="logout()">Logout</button>
+</div>
+<div class="hero">
+  <h1>Committed to Your Well-being<br />Today. Tomorrow. Always.</h1>
+  <div class="search-bar">
+    <input type="text" placeholder="Search doctors, specialties or hospitals" [(ngModel)]="searchQuery" (input)="onSearch()" />
+    <button (click)="onSearch()">Search</button>
+  </div>
+</div>    
+
+<div class="search-results" *ngIf="searchQuery.trim()" >
+  <div *ngIf="filteredResults.length > 0; ">
+    <ul>
+      <li *ngFor="let result of filteredResults" (click)="fillAppointment(result)">
+        <strong>{{ result.name }}</strong><br />
+        <small *ngIf="result.place">Address: {{ result.place }}</small>
+        <small *ngIf="result.phone">Phone: {{ result.phone }}</small>
+        <small *ngIf="result.expertise">Expertise: {{ result.expertise }}</small>
+        <small *ngIf="result.fee">Fee: {{ result.fee }}</small>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="appointment-container">
+  <h2>Book an Appointment</h2>
+
+  <form #appointmentForm="ngForm" (ngSubmit)="submitAppointment(appointmentForm)">
+    <div class="form-group">
+      <label>Doctor / Hospital Name</label>
+      <input type="text" name="name" [(ngModel)]="appointment.name" required />
+    </div>
+    <div class="form-group" >
+      <label>Department / Specialty</label>
+      <input type="text" name="department" [(ngModel)]="appointment.department" required />
+    </div>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" clientname=" clientname" [(ngModel)]="appointment.clientname" required />
+    </div>
+    <div class="form-group">
+      <label>Contact Phone</label>
+      <input type="tel" name="phone" [(ngModel)]="appointment.phone" required />
+    </div>
+    <div class="form-group">
+      <label>Appointment Date</label>
+      <input type="date" name="date" [(ngModel)]="appointment.date" required />
+    </div>
+
+    <div class="form-group">
+      <label>Preferred Time</label>
+      <input type="time" name="time" [(ngModel)]="appointment.time" required />
+    </div>
+
+    <div class="form-group">
+      <label>Email Address</label>
+      <input type="email" name="email" [(ngModel)]="appointment.email" required />
+    </div>
+
+    <div class="form-group">
+      <label>Additional Notes</label>
+      <textarea name="notes" rows="3" [(ngModel)]="appointment.notes" placeholder="Any additional details..."></textarea>
+    </div>
+
+    <button type="submit">Book Appointment</button>
+  </form>
+</div>
+
+  
